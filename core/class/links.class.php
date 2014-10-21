@@ -37,34 +37,38 @@ class LinkEncode {
               $c = ($c+$v);
           //$MD5 = substr($L,-32);
           //$L = substr($L,0,-32);
-          $L = explode('/',$L);
-          $JL=floor(@(10/$c));
-          $JEL=(10%$c)+$JL;
-          $ML=@floor(5/$c);
-          $MEL=(5%$c)+$ML;
-          $xL=floor(10/$c);
-          $xEL=(10%$c)+$xL;
-          $MD5L=floor(32/$c);
-          $MD5EL=(32%$c)+$MD5L;
-          for($i=0;$i<$c;$i++)
-            if($i==($c-1))
-              {
-                $J[] = substr(@$L[($i+1)],0,$JEL);
-                $M[] = substr(@$L[($i+1)],$JEL,$MEL);
-                $X[] = substr(@$L[($i+1)],($JEL+$MEL),$xEL);
-                $MD5[] = substr(@$L[($i+1)],($JEL+$MEL+$xEL),$MD5EL);
-              }
-            else
-              {
-                $J[] = substr($L[($i+1)],0,$JL);
-                $M[] = substr($L[($i+1)],$JL,$ML);
-                $X[] = substr($L[($i+1)],($JL+$ML),$xL);
-                $MD5[] = substr($L[($i+1)],($JL+$ML+$xL),$MD5L);
-              }
-          $this->Mask = $_['MASK'] = implode('',$M);
-          $this->JobID = $_['JOBID'] = implode('',$J);
-          $this->MD5 = $_['MD5'] = implode('',$MD5);
-          $this->Garbage = implode('',$X);
+          if(stristr($L,'/')){
+            $L = explode('/',$L);
+            $JL=floor(@(10/$c));
+            $JEL=(10%$c)+$JL;
+            $ML=@floor(5/$c);
+            $MEL=(5%$c)+$ML;
+            $xL=floor(10/$c);
+            $xEL=(10%$c)+$xL;
+            $MD5L=floor(32/$c);
+            $MD5EL=(32%$c)+$MD5L;
+            for($i=0;$i<$c;$i++)
+              if($i==($c-1))
+                {
+                  $J[] = substr(@$L[($i+1)],0,$JEL);
+                  $M[] = substr(@$L[($i+1)],$JEL,$MEL);
+                  $X[] = substr(@$L[($i+1)],($JEL+$MEL),$xEL);
+                  $MD5[] = substr(@$L[($i+1)],($JEL+$MEL+$xEL),$MD5EL);
+                }
+              else
+                {
+                  $J[] = substr($L[($i+1)],0,$JL);
+                  $M[] = substr($L[($i+1)],$JL,$ML);
+                  $X[] = substr($L[($i+1)],($JL+$ML),$xL);
+                  $MD5[] = substr($L[($i+1)],($JL+$ML+$xL),$MD5L);
+                }
+            $this->Mask = $_['MASK'] = implode('',$M);
+            $this->JobID = $_['JOBID'] = implode('',$J);
+            $this->MD5 = $_['MD5'] = implode('',$MD5);
+            $this->Garbage = implode('',$X);
+          }else{
+            return false;
+          }
         }
       return @$_;
     }
