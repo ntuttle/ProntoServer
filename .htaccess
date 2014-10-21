@@ -1,0 +1,16 @@
+AddDefaultCharset utf-8
+AddCharset utf-8 .html .css .js .xml .json .rss .atom
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -l
+  RewriteRule .* - [L]
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^terms(.*)$  index.php?PAGE=terms&URI=$1 [L]
+  RewriteRule ^privacy(.*)$  index.php?PAGE=privacy&URI=$1 [L]
+  RewriteRule ^contact(.*)$  index.php?PAGE=contact&URI=$1 [L]
+  RewriteRule ^signup(.*)$  index.php?PAGE=signup&URI=$1 [L]
+  RewriteRule ^unsub(.*)$  index.php?PAGE=unsub&URI=$1 [L]
+  RewriteRule ^([a-zA-Z0-9]+.*)$  index.php?URI=$1 [L]
+  RewriteRule ^(.*)$  index.php?PAGE=home&URI=$1 [L]
+</IfModule>
