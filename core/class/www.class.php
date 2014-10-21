@@ -447,7 +447,7 @@ class www {
       $HTML[] = '<td width="auto">';
       $HTML[] = '</td>';
       $HTML[] = '<td style="width:980px;max-width:980px;" class="content">';
-      $HTML[] = $this->GetPage($_GET['PAGE']);
+      $HTML[] = $this->GetPage(@$_GET['PAGE']);
       $HTML[] = '</td>';
       $HTML[] = '<td width="auto">';
       $HTML[] = '</td>';
