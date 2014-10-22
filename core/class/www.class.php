@@ -473,7 +473,7 @@ class www {
           $F = new FORMS('Send us an Email');
           $F->Text('name').$F->Br();
           $F->Text('email').$F->Br();
-          $F->Textarea('message',false,true,false,200).$F->Br();
+          $F->Textarea('message',false,true,false,'200px').$F->Br();
           $F->Button('send message').$F->Br();
           $CONTENT = $F->PrintForm();
           break;
