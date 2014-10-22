@@ -249,7 +249,8 @@ class www {
         'border-radius'   => '3px',
         'box-shadow'      => 'inset 0px 0px 5px black',
         'display'         => 'block',
-        'width'           => '200px'
+        'width'           => '200px',
+        'float'           => 'right'
         ];
       $S['button:hover']  = [
         'cursor'          => 'pointer',
@@ -481,7 +482,7 @@ class www {
           break;
         case 'signup':
           $TITLE = 'Sign Up';
-          $F = new FORMS('signup','Sign up below for special offers');
+          $F = new FORMS('signup','Sign up below for special offers',false, 450);
           $F->Text('fname',false,'first name').$F->Br();
           $F->Text('lname',false,'last name').$F->Br();
           $F->Text('email').$F->Br();
@@ -495,7 +496,7 @@ class www {
             $CONTENT = '<p>You have successfully been removed from our mailing list.</p>';
           }else{
             $CONTENT = '<p>To unsubscribe from future offers, please enter your email address below.</p>';
-            $F = new FORMS('');
+            $F = new FORMS('unsub','Unsubscribe Below',false, 450);
             $F->Text('email').$F->Br();
             $F->Button('unsubscribe now').$F->Br();
             $CONTENT .= $F->PrintForm();
