@@ -323,6 +323,7 @@ class www {
       $S['textarea'] = [
         'width'           => '500px',
         'border'          => '1px solid grey',
+        'padding'         => '5px 10px',
         'background'      => '#FFF3D1'
       ];
       $S['label.title'] = [
