@@ -248,7 +248,9 @@ class www {
         'font-size'       => '14px',
         'font-weight'     => 'bold',
         'border-radius'   => '3px',
-        'box-shadow'      => 'inset 0px 0px 5px black'
+        'box-shadow'      => 'inset 0px 0px 5px black',
+        'display'         => 'block',
+        'width'           => '200px'
         ];
       $S['button:hover']  = [
         'cursor'          => 'pointer',
@@ -307,11 +309,6 @@ class www {
       $S['span > b']      = [
         'color'           => 'inherit'
         ];
-      $S['form input[type=text]']      = [
-        'border'          => '1px dashed grey',
-        'padding'         => '5px 10px',
-        'background'      => '#FFF3D1'
-        ];
       $S['label.input'] = [
         'display'         => 'inline-block',
         'width'           => '300px',
@@ -319,6 +316,8 @@ class www {
       ];
       $S['input[type=text]'] = [
         'width'           => '300px',
+        'padding'         => '5px 10px',
+        'background'      => '#FFF3D1',
         'margin'          => '0px 0px 10px'
       ];
       $S['textarea'] = [
