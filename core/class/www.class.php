@@ -249,8 +249,7 @@ class www {
         'border-radius'   => '3px',
         'box-shadow'      => 'inset 0px 0px 5px black',
         'display'         => 'block',
-        'width'           => '200px',
-        'float'           => 'right'
+        'width'           => '200px'
         ];
       $S['button:hover']  = [
         'cursor'          => 'pointer',
@@ -474,7 +473,7 @@ class www {
           $F = new FORMS('Send us an Email');
           $F->Text('name').$F->Br();
           $F->Text('email').$F->Br();
-          $F->Textarea('message').$F->Br();
+          $F->Textarea('message',false,true,false,200).$F->Br();
           $F->Button('send message').$F->Br();
           $CONTENT = $F->PrintForm();
           break;
