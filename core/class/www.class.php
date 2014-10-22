@@ -318,11 +318,12 @@ class www {
         'width'           => '300px',
         'padding'         => '5px 10px',
         'background'      => '#FFF3D1',
+        'border'          => '1px solid grey',
         'margin'          => '0px 0px 10px'
       ];
       $S['textarea'] = [
         'width'           => '500px',
-        'border'          => '1px dashed grey',
+        'border'          => '1px solid grey',
         'background'      => '#FFF3D1'
       ];
       $S['label.title'] = [
@@ -471,20 +472,20 @@ class www {
         case 'contact':
           $TITLE = 'Contact Us';
           $F = new FORMS('Send us an Email');
-          $F->Text('name');
-          $F->Text('email');
-          $F->Textarea('message');
-          $F->Button('send message');
+          $F->Text('name').$F->Br();
+          $F->Text('email').$F->Br();
+          $F->Textarea('message').$F->Br();
+          $F->Button('send message').$F->Br();
           $CONTENT = $F->PrintForm();
           break;
         case 'signup':
           $TITLE = 'Sign Up';
           $F = new FORMS('signup','Sign up below for special offers');
-          $F->Text('fname',false,'first name');
-          $F->Text('lname',false,'last name');
-          $F->Text('email');
-          $F->Text('email2',false,'repeat email');
-          $F->Button('send message');
+          $F->Text('fname',false,'first name').$F->Br();
+          $F->Text('lname',false,'last name').$F->Br();
+          $F->Text('email').$F->Br();
+          $F->Text('email2',false,'repeat email').$F->Br();
+          $F->Button('send message').$F->Br();
           $CONTENT = $F->PrintForm();
           break;
         case 'unsub':
@@ -494,8 +495,8 @@ class www {
           }else{
             $CONTENT = '<p>To unsubscribe from future offers, please enter your email address below.</p>';
             $F = new FORMS('');
-            $F->Text('email');
-            $F->Button('unsubscribe now');
+            $F->Text('email').$F->Br();
+            $F->Button('unsubscribe now').$F->Br();
             $CONTENT .= $F->PrintForm();
           }
           break;
