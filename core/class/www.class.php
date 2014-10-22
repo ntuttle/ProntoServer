@@ -311,7 +311,8 @@ class www {
       $S['label.input'] = [
         'display'         => 'inline-block',
         'width'           => '300px',
-        'text-align'      => 'right'
+        'text-align'      => 'right',
+        'vertical-align'  => 'top'
       ];
       $S['input[type=text]'] = [
         'width'           => '300px',
@@ -471,7 +472,7 @@ class www {
           break;
         case 'contact':
           $TITLE = 'Contact Us';
-          $F = new FORMS('Send us an Email');
+          $F = new FORMS('contact','Send us an Email',false, 350);
           $F->Text('name').$F->Br();
           $F->Text('email').$F->Br();
           $F->Textarea('message',false,true,300,200).$F->Br();
