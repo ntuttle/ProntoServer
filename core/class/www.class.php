@@ -249,7 +249,8 @@ class www {
         'border-radius'   => '3px',
         'box-shadow'      => 'inset 0px 0px 5px black',
         'display'         => 'block',
-        'width'           => '200px'
+        'width'           => '200px',
+        'float'           => 'right'
         ];
       $S['button:hover']  = [
         'cursor'          => 'pointer',
