@@ -472,7 +472,7 @@ class www {
           break;
         case 'contact':
           $TITLE = 'Contact Us';
-          $F = new FORMS('contact','Send us an Email',false, 350);
+          $F = new FORMS('contact','Send us an Email',false, 450);
           $F->Text('name').$F->Br();
           $F->Text('email').$F->Br();
           $F->Textarea('message',false,true,300,200).$F->Br();
