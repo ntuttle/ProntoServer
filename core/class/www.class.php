@@ -46,7 +46,6 @@ class www {
         $HTML[] = '<b class="logo">'. DOMAIN .'</b>';
         $HTML[] = '<a href="http://'.DOMAIN.'/contact">Contact Us</a>';
         $HTML[] = '<a href="http://'.DOMAIN.'/unsub">Unsubscribe</a>';
-        $HTML[] = '<a href="http://'.DOMAIN.'/signup">Sign Up</a>';
         $HTML[] = '<a href="http://'.DOMAIN.'/">Home</a>';
       $HTML[] = '</td>';
       $HTML[] = '<td class="nb" width="auto">';
