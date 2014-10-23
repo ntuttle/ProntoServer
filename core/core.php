@@ -33,6 +33,9 @@ function MakeDBTables($DB)
 function GetResource($LINK,$DB)
   {
     $Q = $DB->GET('DB.redirect.redirects',['JobID'=>$LINK['JOBID'],'mask'=>$LINK['MASK']],['resource'],1);
+    echo "<pre>";
+    print_r($Q);
+    exit();
     if(!empty($Q))
       return CheckResource($Q['resource'],$LINK,$DB);
   }
