@@ -417,10 +417,11 @@ function ErrorOut($errno, $errstr, $errfile, $errline)
         break;
       case E_USER_NOTICE:$E = setCLR("<b>NOTICE!</b>",'red','bold').' ~ '.$MSG;
         break;
-      default:$E = setCLR("<b>Unknown error!</b>",'red','bold').' ~ '.$MSG;
+      default:false;//$E = setCLR("<b>Unknown error!</b>",'red','bold').' ~ '.$MSG;
         break;
     }
-    echo "<pre>{$E}</pre>";
+    if(!empty($E))
+      echo "<pre>{$E}</pre>";
     return true;
   }
 /**                                    
