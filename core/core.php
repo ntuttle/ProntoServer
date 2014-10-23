@@ -38,10 +38,6 @@ function GetResource($LINK,$DB)
   }
 function ShowImage($R,$LINK=false,$DB)
   {
-    echo "<pre>";
-    print_r($R);
-    print_r($LINK);
-    exit();
     if(is_array($LINK))
       RecordAction($DB,$LINK['JOBID'], $LINK['MD5'], 'OPEN');
     if (IMG == 0) {
@@ -50,6 +46,10 @@ function ShowImage($R,$LINK=false,$DB)
       header('Content-type: image/jpeg');
       readfile('.'.$R);
     }
+    echo "<pre>";
+    print_r($R);
+    print_r($LINK);
+    exit();
     exit();
   }
 function RecordAction($DB,$JOBID,$MD5,$TYPE)
