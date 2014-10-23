@@ -33,14 +33,15 @@ function MakeDBTables($DB)
 function GetResource($LINK,$DB)
   {
     $Q = $DB->GET('DB.redirect.redirects',['JobID'=>$LINK['JOBID'],'mask'=>$LINK['MASK']],['resource'],1);
-    echo "<pre>";
-    print_r($Q);
-    exit();
     if(!empty($Q))
       return CheckResource($Q['resource'],$LINK,$DB);
   }
 function ShowImage($R,$LINK=false,$DB)
   {
+    echo "<pre>";
+    print_r($R);
+    print_r($LINK);
+    exit();
     if(is_array($LINK))
       RecordAction($DB,$LINK['JOBID'], $LINK['MD5'], 'OPEN');
     if (IMG == 0) {
