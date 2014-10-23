@@ -43,10 +43,10 @@ function ShowImage($R,$LINK=false,$DB)
     if (IMG == 0) {
       header('Location: '.$R);
     }else{
-      header('Content-type: image/jpeg');
+      //header('Content-type: image/jpeg');
       $RSLT = readfile('.'.$R);
     }
-    echo "<pre>";
+    echo "<pre><br><br><br>";
     print_r($RSLT);
     exit();
   }
